@@ -22,3 +22,46 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+```ruby:README.md
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, add_index :users,  :name|
+|password|string|null: false|
+|email|string|null: false, unique: true|
+|created_at|integer| |
+### Association
+- has_many :messages
+- has_many :groups, through: :group_user
+
+##messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|messages|string|null: false|
+|image|text||
+|created_at|integer||
+|user_id|integer||
+### Association
+- belongs_to :user
+
+##groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|groups|integer|null: false|
+|groups_users|integer||
+### Association
+- has_many :users, through: :group_user
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :group
+- belongs_to :user
+```
