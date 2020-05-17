@@ -35,7 +35,7 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups, through: :group_user
 
-##　messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |messages|string|null: false|
@@ -45,7 +45,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-##　groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |groups|integer|null: false|
