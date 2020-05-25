@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    # @message = Message.new
     @group.users << current_user
   end
 
