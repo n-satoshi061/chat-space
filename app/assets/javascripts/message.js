@@ -1,4 +1,52 @@
 $(function(){ 
+
+  function buildHTML(message){
+    if ( message.image ) {
+        //data-idが反映されるようにしている
+        var html =
+         `<div class="message" data-message-id=${message.id}>
+            <div class="chat-main__message-list__box">
+              <div class="chat-main__message-list__box__data-top">
+                <div class="name">
+                  ${message.user_name}
+                </div>
+                <div class="date">
+                  ${message.created_at}
+                </div>
+              </div>
+              <div class="chat-main__message-list__box__post">
+                <p class="lower-message__content">
+                  ${message.content}
+                </p>
+              </div>
+              <img src=${message.image} >
+            </div>
+        </div>`
+        return html;
+      } else {
+        //同様にdata-idが反映されるようにしている
+        var html =
+         `<div class="message" data-message-id=${message.id}>
+            <div class="chat-main__message-list__box">
+              <div class="chat-main__message-list__box__data-top">
+                <div class="name">
+                  ${message.user_name}
+                </div>
+                <div class="date">
+                  ${message.created_at}
+                </div>
+              </div>
+              <div class="chat-main__message-list__box__post">
+                <p class="lower-message__content">
+                  ${message.content}
+                </p>
+              </div>
+            </div>
+          </div>`
+        return html;
+      };
+    }
+
   
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -60,52 +108,4 @@ $(function(){
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 1000);
   }
-
-
-  function buildHTML(message){
-    if ( message.image ) {
-        //data-idが反映されるようにしている
-        var html =
-         `<div class="message" data-message-id=${message.id}>
-            <div class="chat-main__message-list__box">
-              <div class="chat-main__message-list__box__data-top">
-                <div class="name">
-                  ${message.user_name}
-                </div>
-                <div class="date">
-                  ${message.created_at}
-                </div>
-              </div>
-              <div class="chat-main__message-list__box__post">
-                <p class="lower-message__content">
-                  ${message.content}
-                </p>
-              </div>
-              <img src=${message.image} >
-            </div>
-        </div>`
-        return html;
-      } else {
-        //同様にdata-idが反映されるようにしている
-        var html =
-         `<div class="message" data-message-id=${message.id}>
-            <div class="chat-main__message-list__box">
-              <div class="chat-main__message-list__box__data-top">
-                <div class="name">
-                  ${message.user_name}
-                </div>
-                <div class="date">
-                  ${message.created_at}
-                </div>
-              </div>
-              <div class="chat-main__message-list__box__post">
-                <p class="lower-message__content">
-                  ${message.content}
-                </p>
-              </div>
-            </div>
-          </div>`
-        return html;
-      };
-    }
 });
