@@ -23,7 +23,6 @@
       width: 260px;
       height: 20px;
       line-height: 20px;
-      margin: 0 20px;
       display: flex;
       flex-direction: row;
       &__name{
@@ -39,9 +38,6 @@
           a{
             text-decoration: none;
             color: #ffffff;
-            .far{
-              padding-left: 5px;
-            }
           }
         }
       }
@@ -49,6 +45,9 @@
   &__groups__list{
     height: 84px;
     &__group{
+      a{
+        text-decoration: none;
+      }
       &__name{
         margin: 20px 20px 0 ;
         color: #ffffff;
@@ -74,7 +73,7 @@
     height: 100px;
     display: flex;
     justify-content: space-between;
-
+    border-bottom: 1px solid #eeeeee;
     &__name{
         font-size: 20px;
         color: #333333;
@@ -94,7 +93,7 @@
         font-size: 16px;
         color: #38aef0;
         text-decoration: none;
-        border: 2px solid #38aef0;
+        border: 1px solid #38aef0;
         padding: 0 20px;
         display: inline-block;
         text-align: center;
@@ -109,13 +108,13 @@
     padding: 35px 40px;
     overflow: auto;
     &__box{
-      margin-left: 40px;
       &__data-top{
         padding-bottom: 12px;
         display: flex;
         .name{
           font-size: 16px;
           color: #333333;
+          font-weight: bold;
         }
         .date{
           font-size: 12px;
@@ -125,9 +124,11 @@
         }
       }
       &__post{
-        margin-bottom: 46px;
-        font-size: 14px;
-        color: #434a54;
+        .lower-message__content{
+          margin-bottom: 46px;
+          font-size: 14px;
+          color: #434a54;
+        }
       }
     }
   }
@@ -153,7 +154,7 @@
         .form__image{
           position: absolute;
           top: 10px;
-          right: 20px;
+          right: 10px;
           cursor: pointer;
           margin: auto 0;
           .fas{
